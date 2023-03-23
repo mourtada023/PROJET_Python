@@ -1,0 +1,251 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Experimentateur &#8212; Module tp-experimentateur 0 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="experience module" href="experience.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="experience.html" title="experience module"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Module tp-experimentateur 0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="experimentateur">
+<h1>Experimentateur<a class="headerlink" href="#experimentateur" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="experience.html"><code class="docutils literal notranslate"><span class="pre">experience</span></code> module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marker.html"><code class="docutils literal notranslate"><span class="pre">marker</span></code> module</a></li>
+</ul>
+</div>
+<div class="section" id="etat-du-tp">
+<h2>Etat du TP<a class="headerlink" href="#etat-du-tp" title="Permalink to this headline">¶</a></h2>
+<p>Complet</p>
+</div>
+<div class="section" id="reponses-aux-questions">
+<h2>Réponses aux questions<a class="headerlink" href="#reponses-aux-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="question-1-2-2">
+<h3>Question 1.2.2<a class="headerlink" href="#question-1-2-2" title="Permalink to this headline">¶</a></h3>
+<p>OP fonction compare du module test (test.compare)</p>
+</div>
+<div class="section" id="question-1-2-3">
+<h3>Question 1.2.3<a class="headerlink" href="#question-1-2-3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>La 1ere stratégie est basée sur <strong>la recherche linéaire</strong>.</li>
+<li>Normalement le pire des cas du recherche lineaire est quand on <strong>ne trouve pas l’element qu’on cherche</strong>.</li>
+<li>On peut dire que si les deux liste des marqueurs et marqueurs positifs sont <strong>relativement grandes</strong>, on va tomber sur le pire des cas du recherche linéaire en cherchant tous les marqueurs négatifs <strong>( qui n’existe pas dans la list des marqueurs positifs )</strong></li>
+<li>Aussi on peut dire qu’on vas réaliser plus comparaison quand le nombre d’élément de la liste des marqueurs positifs est égale au nombre de tous les marqueurs (maximum possible)</li>
+<li>Finalement, on peut faire une petite optimisation de renvoyer 0 au début de la fonction si m = p dans ce cas on vas réaliser le plus comparaison de <strong>m</strong> quand <strong>p = m-1</strong></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="question-1-2-4">
+<h3>Question 1.2.4<a class="headerlink" href="#question-1-2-4" title="Permalink to this headline">¶</a></h3>
+<p><strong>C1(m,p) = n * p</strong></p>
+</div>
+<div class="section" id="question-1-3-2">
+<h3>Question 1.3.2<a class="headerlink" href="#question-1-3-2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>La 2éme stratégie est basée sur <strong>le recherche dicotomique</strong> + <strong>le tri par fusion</strong>.</li>
+<li>Normalement le pire des cas du recherche dicotomique est <strong>quand on ne trouve pas l’élément qu’on cherche</strong>.</li>
+<li>Aussi on peut dire que si les deux liste des marqueurs et marqueurs positifs sont <strong>relativement grandes</strong>, on va tomber sur le pire des cas du recherche dicotomique en cherchant tous les marqueurs negatifs <strong>( qui n’existe pas dans la list des marqueurs positifs )</strong></li>
+<li><dl class="first docutils">
+<dt>Pour le tri par fusion le pire des cas c’est quand on va faire le <strong>maximum nombre de comparaison</strong>.</dt>
+<dd><ul class="first last">
+<li>Pour ce faire,par exemple pour un tableau trié <strong>[1,2,3,4,5,6,7]</strong>, les sous-tableaux gauche et droit impliqués dans l’opération de fusion doivent stocker des éléments alternatifs du tableau trié. c’est-à-dire que le sous-tableau gauche doit être <strong>{1,3,5,7}</strong> et le sous-tableau droit doit être <strong>{2,4,6,8}</strong>.</li>
+<li>Par conséquant <strong>chaque élément sera comparer au moins une fois</strong> et ainsi de suit pour les sous tableaux des sous tableaux</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Aussi on peut dire qu’on vas réaliser plus comparaison quand le nombre d’élément de la liste des marqueurs positifs est égale au nombre de tous les marqueurs (maximum possible)</li>
+<li>Finalement, on peut faire une petite optimisation de renvoyer 0 au début de la fonction si m = p dans ce cas on vas réaliser le plus comparaison de <strong>m</strong> quand <strong>p = m-1</strong></li>
+<li><strong>C1(m,p) = ( p * log2 ( p ) ) + ( m * log2 ( p ) )</strong></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="question-1-4-2">
+<h3>Question 1.4.2<a class="headerlink" href="#question-1-4-2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>La 3éme stratégie est basee sur <strong>le tri par fusion</strong> + <strong>une comparaison linéaire simple</strong>.</li>
+<li><dl class="first docutils">
+<dt>Pour le tri par fusion le pire des cas c’est quand on va faire le <strong>maximum nombre de comparaison</strong>.</dt>
+<dd><ul class="first last">
+<li>Pour ce faire,par exemple pour un tableau trié <strong>[1,2,3,4,5,6,7]</strong>, les sous-tableaux gauche et droit impliqués dans l’opération de fusion doivent stocker des éléments alternatifs du tableau trié. c’est-à-dire que le sous-tableau gauche doit être <strong>{1,3,5,7}</strong> et le sous-tableau droit doit être <strong>{2,4,6,8}</strong>.</li>
+<li>Par conséquant <strong>chaque élément sera comparer au moins une fois</strong> et ainsi de suit pour les sous tableaux des sous tableaux</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Aussi on peut dire qu’on vas réaliser plus comparaison quand le nombre d’élément de la liste des marqueurs positifs est égale au nombre de tous les marqueurs (maximum possible)</li>
+<li>Finalement, on peut faire une petite optimisation de renvoyer 0 au début de la fonction si m = p dans ce cas on vas réaliser le plus comparaison de <strong>m</strong> quand <strong>p = m-1</strong></li>
+<li><strong>C1(m,p) = ( m * log2 ( m ) ) + ( p * log2 ( p ) ) + n</strong></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="question-1-5-6">
+<h3>Question 1.5.6<a class="headerlink" href="#question-1-5-6" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p class="first">Pour les graphique, j’ai modifié mon code main pour créer un fichier nommé <strong>tp-m.data</strong> dont <strong>m</strong> est <strong>le nombre des marqueurs</strong> passe comme argument;</p>
+</li>
+<li><dl class="first docutils">
+<dt>Pour une liste de <strong>10 marqueurs</strong>, on peut constater que la différence entre les 3 strétegies <strong>n’est pas trop grande</strong>. Aussi on remarque que la troisiéme stratégie est <strong>la plus compléxe dans ce cas</strong></dt>
+<dd><ul class="first last simple">
+<li>Pour une liste de <strong>20 marqueurs</strong>, en augmentant le nombre de marqueurs, on peut constater que la différence entre les 3 strétegies commence a grandir</li>
+<li>Meme chose pour les <strong>30 marqueurs</strong> et les <strong>40 marqueurs</strong></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><table class="hlist"><tr><td><ul>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-10.png"><img alt="some image" class="with-shadow align-center" src="_images/tp1-10.png" style="width: 320.0px; height: 240.0px;" /></a>
+</li>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-20.png"><img alt="some image" class="with-shadow" src="_images/tp1-20.png" style="width: 320.0px; height: 240.0px;" /></a>
+</li>
+</ul>
+</td><td><ul>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-30.png"><img alt="some image" class="with-shadow" src="_images/tp1-30.png" style="width: 320.0px; height: 240.0px;" /></a>
+</li>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-40.png"><img alt="some image" class="with-shadow" src="_images/tp1-40.png" style="width: 320.0px; height: 240.0px;" /></a>
+</li>
+</ul>
+</td></tr></table>
+</li>
+<li><dl class="first docutils">
+<dt>Pour une liste de <strong>50 marqueurs</strong>, on peut constater que la différence est trop grande !!!!</dt>
+<dd><ul class="first last simple">
+<li>La Deuxiéme stratégie est la plus moins complexe</li>
+<li>La Premiere est la plus complexe</li>
+<li>La différence entre la troisiéme et la deuxiéme diminue avec l’augmentation de nombre de marqueurs</li>
+<li>Les graphes justifie les résultats que j’ai trouvé pour la compléxité des trois stratégies</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><table class="hlist"><tr><td><ul>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-50.png"><img alt="some image" class="with-shadow align-center" src="_images/tp1-50.png" style="width: 320.0px; height: 240.0px;" /></a>
+</li>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-60.png"><img alt="some image" class="with-shadow" src="_images/tp1-60.png" style="width: 320.0px; height: 240.0px;" /></a>
+</li>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-70.png"><img alt="some image" class="with-shadow" src="_images/tp1-70.png" style="width: 320.0px; height: 240.0px;" /></a>
+</li>
+</ul>
+</td><td><ul>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-80.png"><img alt="some image" class="with-shadow" src="_images/tp1-80.png" style="width: 320.0px; height: 240.0px;" /></a>
+</li>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-90.png"><img alt="some image" class="with-shadow" src="_images/tp1-90.png" style="width: 320.0px; height: 240.0px;" /></a>
+</li>
+</ul>
+</td></tr></table>
+</li>
+<li><p class="first">Pour une liste de <strong>100 marqueurs</strong>… C’est trop claire ;)</p>
+</li>
+<li><a class="with-shadow first reference internal image-reference" href="_images/tp1-100.png"><img alt="some image" class="with-shadow" src="_images/tp1-100.png" style="width: 640.0px; height: 480.0px;" /></a>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Experimentateur</a><ul>
+<li><a class="reference internal" href="#etat-du-tp">Etat du TP</a></li>
+<li><a class="reference internal" href="#reponses-aux-questions">Réponses aux questions</a><ul>
+<li><a class="reference internal" href="#question-1-2-2">Question 1.2.2</a></li>
+<li><a class="reference internal" href="#question-1-2-3">Question 1.2.3</a></li>
+<li><a class="reference internal" href="#question-1-2-4">Question 1.2.4</a></li>
+<li><a class="reference internal" href="#question-1-3-2">Question 1.3.2</a></li>
+<li><a class="reference internal" href="#question-1-4-2">Question 1.4.2</a></li>
+<li><a class="reference internal" href="#question-1-5-6">Question 1.5.6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="experience.html"
+                        title="next chapter"><code class="docutils literal notranslate"><span class="pre">experience</span></code> module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="experience.html" title="experience module"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Module tp-experimentateur 0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2021, Farghaly-Diallo, Univ. Lille.
+      Last updated on 15/02/2021.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
